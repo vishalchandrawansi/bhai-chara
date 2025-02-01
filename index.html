@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Vishal_chandravanshi_</title>
+      <link rel="stylesheet" href="nav.css">
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            Bhai'<span id="logospan">Chara</span>
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>  
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="contact.html">contact us</a></li>
+         </ul>
+      </nav>
+      <hr>
+      <div class="content">
+         
+         <img src="img/homebg.png" alt="">
+                 <div class="a_notes">
+            <h2>You're very welcome my friends.</h2>
+            <br>
+            <h4>You must listen to the bhajan at least till the timer.</h4>
+            <br>
+            <button id="a_notes-btn"><a href="login_form.html">Notes</a></button>
+            <br><br><br><br><br><br><br>
+            <div class="footer">
+               <div class="social">
+                  <a href="https://www.instagram.com/vishal_chandravanshi_.1" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=61556400363813" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://www.threads.net/@vishal_chandravanshi_.1" target="_blank  "><i class="fa-brands fa-threads"></i></a>
+               </div>
+      
+               <ul class="list">
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="notes.html">Notes</a></li>
+                   <li><a href="contact.html">Contact us</a></li>
+              
+               </ul>
+             
+       
+               <p class="copyright">© Copyright 2025 Vishal | All Rights Reserved.</p>
+      
+      
+           </div>
+        </div>
+         <div class="popup">
+            <div class="popup-content">
+               
+                <h2><span>DISCLAIMER :-</span>
+                <br>
+                  This website is for educational purposes only and help the students.</h2><br>
+                <p>
+                  The website administrator and contributor do not hold responsibility for any copyright infringement that may occur.
+                  <br><br>
+                  Please click "OK."
+
+                </p>
+                <button id="song-ram" onmousedown="song.play()">Ok</button>
+            </div>
+        </div>
+
+       
+            
+        
+     
+      
+
+      <script>const activePage = window.location.pathname;
+         const navLinks = document.querySelectorAll('nav a').forEach(link => {
+           if(link.href.includes(`${activePage}`)){
+             link.classList.add('active');
+             console.log(link);
+           }
+         })
+
+         var song = new Audio();
+          song.src = "ram_stuti.mp3";
+          song.loop = true;
+          
+          
+          const popup = document.querySelector('.popup');
+        const x = document.querySelector('.popup-content h1')
+
+        window.addEventListener('load', () => {
+            popup.classList.add('showPopup');
+            popup.childNodes[1].classList.add('showPopup');
+        })
+
+const songRamButton = document.getElementById('song-ram');
+
+songRamButton.addEventListener('click', () => {
+  popup.classList.remove('showPopup');
+  popup.childNodes[1].classList.remove('showPopup');
+});
+
+var downloadButton = document.getElementById("a_notes-btn");
+var counter = 60;
+var newElement = document.createElement("p");
+newElement.innerHTML = "You have to wait 60 seconds.";
+var id;
+downloadButton.parentNode.replaceChild(newElement, downloadButton);
+id = setInterval(function() {
+counter--;
+if(counter < 0) {
+newElement.parentNode.replaceChild(downloadButton, newElement);
+clearInterval(id);
+} else {
+newElement.innerHTML = "You have to wait " + counter.toString() + " seconds.";
+}}, 1000);
+
+
+
+         </script>
+   </body>
+</html>

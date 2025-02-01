@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vishal</title>
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="contact.css" />
+
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Bhai'Chara</div>
+      <input type="checkbox" id="click" />
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="contact.html">contact us</a></li>
+      </ul>
+    </nav>
+    <hr />
+    <div class="contact">
+      <section class="contact-form" id="contact-form">
+        <h2 class="contact-me" id="contact-me">Contact <span>Me</span></h2>
+
+        <form method="post" name="google-sheet">
+          <div class="input-box">
+            <input
+              type="text"
+              id="Name"
+              name="Name"
+              placeholder="Your Full name.."
+            />
+
+            <input
+              type="number"
+              id="PhoneNumber"
+              name="PhoneNumber"
+              placeholder="Your Phone No.."
+            />
+          </div>
+          <textarea
+            name="Your_MSG"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+          ></textarea>
+          <input
+            type="submit"
+            value="Send Message"
+            class="btn-1"
+            name="submit"
+          />
+        </form>
+      </section>
+    </div>
+
+    <script>
+      const activePage = window.location.pathname;
+      const navLinks = document.querySelectorAll("nav a").forEach((link) => {
+        if (link.href.includes(`${activePage}`)) {
+          link.classList.add("active");
+          console.log(link);
+        }
+      });
+
+      //for google sheet
+
+      
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwNsrJhWllZal1652WW0JaOlGS-ZdUyTw759TX8-2vOA4M-bxZE-88KvBxsB_XSO6_t4g/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+body{
+    margin: auto;
+    background-color: #131c30;
+}
+
+.content {
+   
+    height: 100%;
+
+
+   
+}
+.content img {
+    margin-top: 70px;
+    width: 92vw;
+
+    
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    place-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms ease-in-out opacity;
+}
+.popup-content {
+    width: clamp(300px, 90vw, 500px);
+    background-color: #fff;
+    border: 2px solid orangered;
+    padding: clamp(0.5rem, 100vw, 3rem);
+    box-shadow: 0 0 1.5em orangered;
+    border-radius: .5em;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 200ms ease-in-out opacity,
+                200ms ease-in-out transform;
+    position: relative;
+}
+.popup h1 {
+    
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
+.popup h1:active {
+    transform: scale(.9);
+}
+
+.showPopup {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    width: 100%;
+    padding: 0 30px;
+    color:#131c30;
+ 
+  }
+  .content div{
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+.content span{
+    color: red;
+} 
+.content button{
+    color: orangered;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #131c30;
+    padding: 0 0.5em ;
+  background: white;
+  background-color: orangered;
+  box-shadow: 0 0 15px orangered;
+  color: white;
+  
+ 
+}
+
+.a_notes{
+    color: orangered;
+    text-align: center;
+    padding-top: 20px;
+ 
+    padding-bottom: 20px;
+}
+    
+.footer {
+    
+    position: relative;
+    bottom: 0;
+    width: 92vw;
+    padding: 40px 0;
+    background-color: #232f3e;
+}
+
+.footer ul a {
+    margin-top: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: white;
+    
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid orangered;
+    color: orangered;
+    text-shadow: 0 0 10px orangered, 0 0 30px orangered;
+    transform: scale(1.1);
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer .copyright {
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 2px 0;
+    font-size: 13px;
+    color: orangered;
+    text-align: center;
+
+}
+
+.footer .copyright:hover {
+    color: white;
+    
+    box-shadow: 0 0 10px orangered, 0 0 30px orangered;
+    transform: scale(1.2) translateY(-5px);
+    transition: 0.5s ease;
+}
+.footer .social {
+    padding-bottom: 25px;
+    color: white;
+    text-align: center;
+}
+
+.footer .social a {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border: 2px solid orangered;
+    width: 40px;
+    height: 40px;
+    line-height: 18px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px orangered 0 0 10px orangered;
+    transition: 0.3s ease;
+    text-align: center;
+}
+.list{
+    text-align: center;
+}
+
+.footer .social a:hover {
+
+    color: orangered;
+    box-shadow: 0 0 10px orangered, 0 0 30px orangered;
+    transform: scale(1.2) translateY(-10px);
+}
+.a_notes p{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
