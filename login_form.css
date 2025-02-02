@@ -11,7 +11,12 @@ body
     justify-content: center;
     align-items: center;
     
- background-color: #131c30;
+ background-image: url('img/loginbg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
 }
 .box
 {
